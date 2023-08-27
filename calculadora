@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class App {
+
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        double numero1, numero2, resultado;
+        char operador;
+
+        System.out.print("Ingresa el primer número: ");
+        numero1 = input.nextDouble();
+
+        System.out.print("Ingresa un operador (+, -, *, /): ");
+        operador = input.next().charAt(0);
+
+        System.out.print("Ingresa el segundo número: ");
+        numero2 = input.nextDouble();
+
+        switch (operador) {
+            case '+':
+                resultado = numero1 + numero2;
+                System.out.println("El resultado de la suma es: " + resultado);
+                break;
+            case '-':
+                resultado = numero1 - numero2;
+                System.out.println("El resultado de la resta es: " + resultado);
+                break;
+            case '*':
+                resultado = numero1 * numero2;
+                System.out.println("El resultado de la multiplicación es: " + resultado);
+                break;
+            case '/':
+                if (numero2 != 0) {
+                    resultado = numero1 / numero2;
+                    System.out.println("El resultado de la división es: " + resultado);
+                } else {
+                    System.out.println("Error: No se puede dividir por cero.");
+                }
+                break;
+            default:
+                System.out.println("Operador no válido.");
+                break;
+        }
+
+        input.close();
+    }
+}
