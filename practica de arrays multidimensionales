@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Random;
+
+public class App {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Pedir al usuario el tamaño del array
+        System.out.print("Ingrese el tamaño del array: ");
+        int tamano = scanner.nextInt();
+
+        // Crear el array con el tamaño proporcionado
+        int[] numeros = new int[tamano];
+
+        // Llenar el array con números aleatorios entre 0 y 9
+        Random random = new Random();
+        for (int i = 0; i < tamano; i++) {
+            numeros[i] = random.nextInt(10); // Genera un número aleatorio entre 0 y 9
+        }
+
+        // Mostrar los valores del array y calcular la suma
+        int suma = 0;
+        System.out.println("Valores del array:");
+        for (int i = 0; i < tamano; i++) {
+            System.out.println("Posición " + i + ": " + numeros[i]);
+            suma += numeros[i];
+        }
+
+        // Mostrar la suma
+        System.out.println("Suma de todos los valores: " + suma);
+
+        // Cerrar el scanner
+        scanner.close();
+    }
+}
